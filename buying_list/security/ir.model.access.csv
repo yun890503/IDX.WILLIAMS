@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_group_buying_user,access_group_buying_user,model_group_buying,group_buying_user,1,1,1,1
+access_group_buying_line_user,access_group_buying_line_user,model_group_buying_line,group_buying_user,1,1,1,1
+access_group_buying_admin,access_group_buying_admin,model_group_buying,group_buying_admin,1,1,1,1
+access_group_buying_line_admin,access_group_buying_line_admin,model_group_buying_line,group_buying_admin,1,1,1,1

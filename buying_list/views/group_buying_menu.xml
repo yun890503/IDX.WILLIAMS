@@ -1,0 +1,15 @@
+<odoo>
+    <record id="action_group_buying" model="ir.actions.act_window">
+        <field name="name">團購表單</field>
+        <field name="res_model">group.buying</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_group_buying_search"/> 
+        
+    </record>
+
+    <!-- 主選單 -->
+    <menuitem id="menu_group_buying_root" name="團購" sequence="10" />
+    <!-- 團購管理子選單 -->
+    <menuitem id="menu_group_buying_main" name="團購管理" parent="menu_group_buying_root" action="action_group_buying" sequence="10" />
+    
+</odoo>
