@@ -8,10 +8,7 @@
                 <field name="user_id"/>
                 <field name="open_date"/>
                 <field name="close_date" widget="remaining_days"/>
-<<<<<<< HEAD
                 <field name="total_amount"/>
-=======
->>>>>>> f0896ef284d716bd75a69338d16ce254d613c49d
             </tree>
         </field>
     </record>
@@ -26,11 +23,8 @@
                     <group>
                         <field name="name" readonly="1"/>
                         <field name="user_id"/>
-<<<<<<< HEAD
                         <field name="user_email" readonly="1"/>
                         
-=======
->>>>>>> f0896ef284d716bd75a69338d16ce254d613c49d
                     </group>
                     <group>
                         <field name="open_date"/>
@@ -42,16 +36,11 @@
                             <field name="group_buying_ids">
                                 <tree editable="bottom">
                                     <field name="partner_id"/>
-<<<<<<< HEAD
                                     <field name="phone"/>
                                     <field name="product_id"/>
                                     <field name="qty"/>
                                     <field name="unit_price"/>
                                     <field name="amount" sum="Sum of amount"/>
-=======
-                                    <field name="product_id"/>
-                                    <field name="qty"/>
->>>>>>> f0896ef284d716bd75a69338d16ce254d613c49d
                                 </tree>
                             </field>
                         </page>
