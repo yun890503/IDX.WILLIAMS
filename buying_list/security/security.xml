@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 模組分類 -->
+    <record model="ir.module.category" id="module_category_group_buying">
+        <field name="name">Group Buying</field>
+        <field name="sequence">15</field>
+    </record>
+
+    <!-- 使用者群組 -->
+    <record id="group_buying_user" model="res.groups">
+        <field name="name">Group Buying User</field>
+        <field name="category_id" ref="module_category_group_buying"/>
+    </record>
+
+    <!-- 管理者群組 -->
+    <record id="group_buying_admin" model="res.groups">
+        <field name="name">Group Buying Admin</field>
+        <field name="category_id" ref="module_category_group_buying"/>
+        <!-- 管理者隱含使用者權限 -->
+        <field name="implied_ids" eval="[(4, ref('group_buying_user'))]"/>
+    </record>
+</odoo>
