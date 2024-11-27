@@ -1,7 +1,11 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 from datetime import datetime
+<<<<<<< HEAD
 from datetime import timedelta
+=======
+
+>>>>>>> f0896ef284d716bd75a69338d16ce254d613c49d
 class GroupBuying(models.Model):
     _name = 'group.buying'
     _description = '團購表單'
@@ -15,15 +19,19 @@ class GroupBuying(models.Model):
         default=lambda self: self.env.user,  
         required=True
     )
+<<<<<<< HEAD
     user_email = fields.Char(
         string='開團人員 Email',
         related='user_id.partner_id.email',  # 從 res.partner 表的 email 帶出
         readonly=True
     )
+=======
+>>>>>>> f0896ef284d716bd75a69338d16ce254d613c49d
     open_date = fields.Date(string='開團日期', required=True ,tracking=True)
     close_date = fields.Date(string='結單日期', required=True)
     active = fields.Boolean(string='有效', default=True)
     group_buying_ids = fields.One2many('group.buying.line', 'group_buying_id', string='團購表單明細')
+<<<<<<< HEAD
     total_amount = fields.Integer(string='總計', compute='_compute_total_amount', store=True)
 
     @api.onchange('open_date')
@@ -37,6 +45,9 @@ class GroupBuying(models.Model):
         print(self)
         for record in self:
             record.total_amount = sum(line.amount for line in record.group_buying_ids)
+=======
+
+>>>>>>> f0896ef284d716bd75a69338d16ce254d613c49d
     
     @api.model
     def create(self, vals):
@@ -60,11 +71,15 @@ class GroupBuying(models.Model):
             if record.close_date < record.open_date:
                 raise ValidationError("開團日期需早於結單日期!")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0896ef284d716bd75a69338d16ce254d613c49d
 class GroupBuyingLine(models.Model):
     _name = 'group.buying.line'
     _description = '團購表單明細'
 
+<<<<<<< HEAD
     phone = fields.Char('電話號碼', related='partner_id.phone', readonly=True)
     group_buying_id = fields.Many2one('group.buying', string='開團單號', required=True, ondelete='cascade')
     partner_id = fields.Many2one('res.partner', string='跟團人員', required=True)
@@ -82,3 +97,9 @@ class GroupBuyingLine(models.Model):
     def _onchange_amount(self):
         if self.unit_price and self.qty:
             self.amount = self.unit_price * self.qty
+=======
+    group_buying_id = fields.Many2one('group.buying', string='開團單號', required=True, ondelete='cascade')
+    partner_id = fields.Many2one('res.partner', string='跟團人員', required=True)
+    product_id = fields.Many2one('product.product', string='商品', required=True)
+    qty = fields.Integer(string='數量', required=True, default=1)
+>>>>>>> f0896ef284d716bd75a69338d16ce254d613c49d
